@@ -1,0 +1,98 @@
+1.在github网站上敲快捷键t（ctrl f） 可以搜索文件
+  在html文件前加https://htmlpreview.github.io/? 直接预览效果
+2.查看git是否安装 
+    $ git 
+    没安装的话 Ubunu Linux上只直接通过sudo apt-get install git 完成安装
+3.自报家门的方式：
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "email@example.com"
+4.创建版本库：
+    $ mkdir learngit （建立learngit目录）
+    $ cd learngit/Users/xoeaza/Desktop/各种技巧/github使用技巧.txt
+    $ pwd （显示当前目录位置）
+    $ git init （把它变成git可以管理的目录）
+    $ ls -ah  可以看到当前隐藏默认目录
+5.添加文件：
+    $ git add readme.txt（这里是添加readme.txt）
+    $ git add --all(一次性添加所有文件)
+    $ git commit -m "wrote a readme file" （把文件添加到仓库 并加以注释）（还可以多个文件同时提交）
+6.查看仓库当前状态：
+    $ git commit —-amend 回到提交前的状态
+    $ git status 
+    $ git diff readme.txt （查看前后两次的区别 这里是readme.txt文件）
+    $ cat readme.txt （显示readme.txt文档内容）
+7.查看版本的历史记录：
+    $git log （显示从最近到最远的提交日志 按q退出）
+    $git log --pretty=oneline （在一行中显示）
+    $git log --pretty=oneline --abbrev-commit (简略显示)
+8.回到之前的版本：
+    $ git reset --hard HEAD^ （HEAD^^是回到之前第二个版本^^^同理就是前三 第一百个版本就可以写成HEAD~100 这里的hard指暂存区，工作区全部用指定提交版本替换掉）
+    $ git reset --hard 182d741 （通过commit id 版本号来回到各个版本）
+    $ git reflog  （查看自己操作的每一次命令）
+    $ git diff HEAD -- readme.txt （查看工作区和版本库中最新版本的区别）
+9.撤销之前的更改：
+    $ git checkout -- readme.txt （还没有add）
+    $ git reset HEAD readme.txt （已经add的情况下 先使得退回到工作区 再执行上一条命令）
+10.删除文件：
+    $ rm test.txt
+    $ git rm test.txt  （把版本库里的也删除）
+    $ git checkout -- test.txt （撤销 将版本库中的覆盖回来）
+11.  	
+    git remote set-url origin [url]   同步到远程库
+    git push -u origin [url] 
+    git remote add upstream [url] 为远程库添加上游仓库git 
+    git branch -v 查看各种远端分支
+    git fetch upstream 拉取上游的分支
+    git merge upstream/develop 将上游分支的更细内容合并到本地分支
+
+    $ git remote add origin https://github.com/hxb950212/learngit.git
+    $ git push -u origin master  （这两个是第一次推送的命令）
+    $ git push origin master （关联后的简化命令）
+12.从远程仓库克隆到本地：
+    $ git clone git@github.com:hxb950212/readme.txt （Git支持多种协议，这种方式也可以）
+13.创建并切换到新分支：
+    $ git checkout -b dev （这里就切换到dev分支了）
+      git checkout -b <new-branch> <existing-branch> 指定以什么分支为基础创建分支
+      git checkout -b feature/test -t upstream/feature/test 根据上游分支创建本地分支
+    $ git branch  （查看当前的分支）
+    $ git checkout master （切换回master分支）
+14.合并分支：
+    $ git merge dev （直接将dev的内容合并到master上来）
+      git rebase -i --autosquash develop 将所有提交合成一个提交
+    $ git branch -d dev （删掉没用的分支）$ git branch -D feature-vulcan （强行删除）
+    $ git log --graph --pretty=oneline --abbrev-commit （查看分支合并图）
+    $ git merge --no-ff -m "merge with no-ff" dev （不用fast forward模式合并 这样可以留下记录 ）
+15.暂藏匿当前工作内容：
+    $ git stash
+    $ git stash list （查看之前的工作地点存在哪）
+    $ git stash apply  +$ git stash drop （前一个不删除stash，加上后者才删掉）
+    $ git stash pop （直接恢复并且删掉stash）
+    $ git stash apply stash@{0} （恢复指定的stash）
+16. $ git remote -v （显示详细的远程库信息）
+    git fetch origin branchname:branchname
+可以把远程某各分支拉去到本地的branchname下，如果没有branchname，则会在本地新建branchname
+    git checkout origin/remoteName -b localName
+获取远程分支remoteName 到本地新分支localName，并跳到localName分支
+    $ git pull （把最新的提交从远端抓下来）
+    $ git branch --set-upstream dev origin/dev （抓失败，敲这行代码指定链接后再抓）
+17. $git tag v1.0 (针对当前提交打一个标签 可以用命令git tag查看所有标签：)
+    $git tag v0.9 6224937 （找一个commit版本打标签）
+    $git show v0.9 （查看标签具体内容）
+    $git tag -a <tagname> -m "blablabla..."（写标签具体说明）
+    $git push origin <tagname>可以推送一个本地标签；
+    $git push origin --tags可以推送全部未推送过的本地标签；
+    $git tag -d <tagname>可以删除一个本地标签；
+    $git push origin :refs/tags/<tagname>可以删除一个远程标签。
+18.检查.ignore文件
+    $git check-ignore -v readme.txt 强制添加readme.txt文件到Git
+    $git check-ignore -v readme.txt 检查那个规则是该文件被忽略，找出问题源头
+
+19.配置host
+    cd /etc
+    sudo vim hosts
+
+20:删除远程分支
+git branch -r -d origin/branch-name
+将改变推送到远程
+git push origin :branch-name
+

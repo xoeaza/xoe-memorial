@@ -1,0 +1,85 @@
+// VScode快捷键
+Alt shift ↓ 快速复制光标所在行
+ctrl/command shift k 快速删除光标所在行
+⌘P 打开文件快速查找
+⇧⌘P 命令快速查找
+⌃G 到达行
+⇧⌘M 显示／隐藏问题页
+⌘1 / ⌘2 / ⌘3 焦点在1，2，3页移动
+⌘O 打开文件
+⌘K P 复制文件路径
+⌘B 侧边栏到显示
+⇧⌘C 打开新的终端
+Option shift f 格式化代码
+
+VScode返回之前跳转的位置
+使用快捷键 Ctrl + -，可以跳回到之前光标的所在位置。
+使用快捷键 Ctrl + Shift + -，撤销上面的跳转。
+使用（ Ctrl + -）跳回去之后，如果想在返回,可用（Ctrl + Shift + -）撤销跳转
+
+注释： ctrl+cmd+t （VScode中koroFileHeader插件）
+VScode markdown预览.md文件: cmd + shift + v
+VScode中在命令行打开项目: code .
+
+// Linux 常用命令
+ls -l 列出长数据串，包含文件属性
+ls -a 列出所有文件，包括隐藏文件
+rm -f 强制删除，忽略不存在的文件
+rm -fr dir 强制删除目录dir中的所有文件
+cat text 查看文件内容
+chown users -R /dir  把dir目录下所有文件所有者改为users
+lsof -i:9080 查看占用9080端口的应用
+Kill 2587（指pid） 杀掉对应的进程
+
+// Vim 常用命令
+在命令模式下，按i键即可进入到插入模式
+在插入模式下，按Esc键，再按冒号:键即可进入命令模式。
+:wq              保存修改并退出
+ZZ               快捷键，保存修改并退出(前面没有冒号)
+:q!              不保存退出
+:wq!             强行保存退出，(文件所属者科忽略文件的制度属性)
+:w               保存不退出
+:wqa             保存所有文件
+:w new_filename  另存为指定文件
+shift+command+U  打开文件终端
+$ cd ~ 
+编辑文件$ vim .bash_profile
+保存环境变量并立即生效 source ~/.bash_profile 
+查看是否生效 echo $PATH
+
+//item快捷键
+关闭标签：command + w
+退出：command + q
+查找：command + f
+查看剪贴板历史：command + shift + h
+查看历史命令：command + ;
+垂直分屏：command + d
+水平分屏：command + shift + d
+清空当前行：control + u
+
+//在Finder中：　
+Command-Shift-N 新建文件夹（New）　　
+Command-Shift-G调出窗口，可输入绝对路径直达文件夹
+Command+Shift+. 显示/隐藏 文件、文件夹
+return 点击文件，按下可重命名文件　　
+Command-O 打开所选项　
+Command-上箭头 打开包含当前文件夹的文件夹，相当于Windows里的“向上”　　
+Command-Delete 将文件移至废纸篓　　
+Command-Shift-Delete 清倒废纸篓　　
+空格键 快速查看选中的文件，也就是预览功能
+
+//Tiddlywiki 快捷键
+Alt p 打开预览窗口
+ctrl shift i 插入图片
+ctrl enter 保存
+Escape  放弃保存
+
+⌘-Option-I
+打开“开发人员工具”。
+clear 清空当前命令页
+1.console.time 计时开始。console.timeEnd  计时结束
+console.time("start")
+执行代码
+2.console.timeEnd("start")
+传统方法是 const start=new Date().getTime()
+console.log(new Date().getTime()-start)
