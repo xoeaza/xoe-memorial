@@ -96,3 +96,6 @@ git branch -r -d origin/branch-name
 将改变推送到远程
 git push origin :branch-name
 
+21: 解决.git/index.lock file exist问题
+rm -f ./.git/index.lock
+
