@@ -1,0 +1,10 @@
+# 查看可用的node版本
+nvm ls-remote
+# 安装某一node版本
+nvm install v10.16.3 
+# 查看某一版本是否安装完成
+node --version v10.16.3 
+# 切换某node版本
+nvm use v10.10.0
+# 切换某版本为默认版本
+nvm alias default v10.16.3 
