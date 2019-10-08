@@ -99,3 +99,6 @@ git push origin :branch-name
 21: 解决.git/index.lock file exist问题
 rm -f ./.git/index.lock
 
+22. 按最后提交时间查看远端分支
+for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort -r
+

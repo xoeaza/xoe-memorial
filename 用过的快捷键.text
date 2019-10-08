@@ -83,3 +83,6 @@ console.time("start")
 2.console.timeEnd("start")
 传统方法是 const start=new Date().getTime()
 console.log(new Date().getTime()-start)
+
+chrome快捷键
+1.开发模式查看元素快捷键： command+shift+C
