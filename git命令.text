@@ -83,6 +83,7 @@
     $git push origin --tags可以推送全部未推送过的本地标签；
     $git tag -d <tagname>可以删除一个本地标签；
     $git push origin :refs/tags/<tagname>可以删除一个远程标签。
+    $git tag -l 'v*' 查看以v开头的标签
 18.检查.ignore文件
     $git check-ignore -v readme.txt 强制添加readme.txt文件到Git
     $git check-ignore -v readme.txt 检查那个规则是该文件被忽略，找出问题源头
