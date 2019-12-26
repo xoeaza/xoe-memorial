@@ -5,3 +5,5 @@ npm list -g --depth 0
 
 # yarn
 yarn global list
+
+# npm cache clean --force 清除npm缓存

@@ -86,3 +86,4 @@ console.log(new Date().getTime()-start)
 
 chrome快捷键
 1.开发模式查看元素快捷键： command+shift+C
+2.Ctrl+Tab来切换到下一个标签页
