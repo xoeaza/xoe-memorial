@@ -126,3 +126,7 @@ for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci 
 23. 查看ssh公钥
 cd ~/.ssh
 cat id_rsa.pub
+
+24. 为repo的用户生成新的ssh key
+ssh-keygen -C "example@gmail.com" (example: 起名为id_rsa.github)
+mv id_rsa.github* ~/.ssh/
