@@ -38,6 +38,8 @@
     $ git reset --hard 182d741 （通过commit id 版本号来回到各个版本）
     $ git reflog  （查看自己操作的每一次命令）
     $ git diff HEAD -- readme.txt （查看工作区和版本库中最新版本的区别）
+    $ git reset --soft 182d741(软回退，修改保留在缓存区)
+    $ git reset --mixed 182d741(回退，保留修改，需重新add)
 
 9.撤销之前的更改：
     $ git checkout -- readme.txt （还没有add）
@@ -130,3 +132,6 @@ cat id_rsa.pub
 24. 为repo的用户生成新的ssh key
 ssh-keygen -C "example@gmail.com" (example: 起名为id_rsa.github)
 mv id_rsa.github* ~/.ssh/
+
+25. 清除git缓存
+git rm -r --cached .
