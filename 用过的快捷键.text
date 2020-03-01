@@ -11,7 +11,8 @@ ctrl/command shift k 快速删除光标所在行
 ⌘B 侧边栏到显示
 ⇧⌘C 打开新的终端
 Option shift f 格式化代码
-
+Alt Shift A 多行注释
+ 
 VScode返回之前跳转的位置
 使用快捷键 Ctrl + -，可以跳回到之前光标的所在位置。
 使用快捷键 Ctrl + Shift + -，撤销上面的跳转。
