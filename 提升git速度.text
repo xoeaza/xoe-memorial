@@ -6,3 +6,6 @@ git config --global https.proxy socks5://127.0.0.1:1080
 输入 sudo gedit /etc/hosts 之后，在hosts文件中加入
 151.101.72.249	global-ssl.fastly.net
 192.30.253.112  github.com
+
+3.查询是否使用代理：git config --global http.proxy
+  取消代理：git config --global --unset http.proxy
