@@ -135,3 +135,10 @@ mv id_rsa.github* ~/.ssh/
 
 25. 清除git缓存
 git rm -r --cached .
+
+26. git设置快捷名
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
+
+vi ~/.gitconfig
