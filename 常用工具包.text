@@ -1,0 +1,5 @@
+1. 图片压缩
+#压缩png
+node-pngquant-native: 跨平台，压缩比高，压缩png24非常好
+#压缩jpg
+jpegtran: 图片尺寸随着网络环境变化
