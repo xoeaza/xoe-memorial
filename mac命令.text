@@ -1,1 +1,3 @@
 1. 查看finder隐藏文件： command + shift + .
+
+2. 查看本机ip： ifconfig en0
