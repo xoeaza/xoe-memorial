@@ -1,3 +1,5 @@
 1. 查看finder隐藏文件： command + shift + .
 
 2. 查看本机ip： ifconfig en0
+
+3. 允许所有来源安装： sudo spctl --master-disable
