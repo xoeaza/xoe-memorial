@@ -1,0 +1,7 @@
+1. ctrl + d: 行复制
+2. crtl + ⌫: 行删除
+3. ctrl+'-/+' :自动折迭/展开代码块
+4. ctrl+shift+左右箭头: 单位向左右选中代码
+5. ctrl+g : 匹配下一个
+6. command + alt + 左右箭头: 回到光标上一个地点
+7. Option+Command+l : 格式化文件

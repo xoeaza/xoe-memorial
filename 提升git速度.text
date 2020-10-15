@@ -2,6 +2,16 @@
 git config --global http.proxy socks5://127.0.0.1:1080
 git config --global https.proxy socks5://127.0.0.1:1080
 
+===========仅仅针对github进行配置，让github走本地代理
+# socks5协议，1080端口修改成自己的本地代理端口
+git config --global http.https://github.com.proxy socks5://127.0.0.1:7891
+git config --global https.https://github.com.proxy socks5://127.0.0.1:7891
+
+# http协议，1081端口修改成自己的本地代理端口
+git config --global http.https://github.com.proxy http://127.0.0.1:7890
+git config --global https.https://github.com.proxy http://127.0.0.1:7890
+
+
 2. 修改 hosts 文件直接映射
 输入 sudo gedit /etc/hosts 之后，在hosts文件中加入
 151.101.72.249	global-ssl.fastly.net
