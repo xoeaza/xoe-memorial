@@ -1,0 +1,6 @@
+// 电脑抓取手机https请求
+1. 电脑端安装charles和https证书，打开charles，访问chls.pro/ssl下载证书，传给手机。
+2. 电脑端Proxy -> SSL Proxying Settings，勾选Enable SSL Proxying, 点击Add
+   Host填写：*, Port填写：443
+3. 获取电脑ip地址，手机上设置手动代理，ip填电脑ip和端口填写监听的端口。
+4. iOS 10.3系统及以上，需要在 设置→通用→关于本机→证书信任设置 里面启用完全信任Charles证书，打开信任正式按钮

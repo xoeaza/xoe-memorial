@@ -29,3 +29,6 @@ yarn config set registry 'https://registry.yarnpkg.com'
 
 # npm包更新到指定版本
 npm update webpack@4.7.0 --save
+
+# 查看对应npm包最新版本
+npm view webpack@4.7.0 version --json

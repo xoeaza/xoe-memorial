@@ -5,3 +5,12 @@
 5. ctrl+g : 匹配下一个
 6. command + alt + 左右箭头: 回到光标上一个地点
 7. Option+Command+l : 格式化文件
+8. command + l : 跳转到指定行数
+9. command + k	调出git的commit界面，提交版本
+10. command + r	替换文本
+11. command + '-/+'	可以折迭项目中的任何代码块，它不是选中折迭，而是自动识别折迭。
+12. command + ‘.’	折迭选中的代码的代码。
+13. command + shift + r	全局替换指定文本
+14. shift + enter	重新开始一行（无论光标在哪个位置）
+15. command + l	Go To Line，跳转到某某行某某列
+16. alt + F3	逐个往下查找相同文本，并高亮显示
