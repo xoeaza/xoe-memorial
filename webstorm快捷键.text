@@ -14,3 +14,8 @@
 14. shift + enter	重新开始一行（无论光标在哪个位置）
 15. command + l	Go To Line，跳转到某某行某某列
 16. alt + F3	逐个往下查找相同文本，并高亮显示
+17. color scheme   设置编辑区字体大小
+18. 如何安装主题
+    1.从主菜单打开编辑器，依次点击 File->Import Setting，选择您的下载的jar文件；
+    2.待编辑器重启之后，依次点击 File->Settings->Editor->Colors and fonts，然后选择你安装的主题即可。
+19. command + 4 打开命令行    
