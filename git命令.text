@@ -147,3 +147,9 @@ vi ~/.gitconfig
 
 27.删除所有已经不在远程仓库维护的分支
 git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+
+28. 批量删除指定远程分支
+git branch -r| grep -E 'feature_oe|feat_oe2' | sed 's/origin\///g' | xargs -I {} git push origin :{}
+
+29. 批量删除本地指定分支
+git branch |grep 'branchName' |xargs git branch -D
