@@ -41,6 +41,22 @@
     $ git diff HEAD -- readme.txt （查看工作区和版本库中最新版本的区别）
     $ git reset --soft 182d741(软回退，修改保留在缓存区)
     $ git reset --mixed 182d741(回退，保留修改，需重新add)
+    $ master上误合并有问题代码, 需回退：
+      假定tag8为本次误操作确认上线生成的tag，tag7为再上一次的稳定tag，具体执行命令如下：
+      先通过tag8创建fix_revert分支
+
+      git fetch origin master
+      git checkout -b fix_revert_tmp tag7
+      git merge origin/master --squash
+      git commit -m "all in one commit" 
+      git revert HEAD # 填写提交信息并保存
+
+      git fetch origin fix_revert
+      git checkout -b fix_revert origin/fix_revert
+      git cherry-pick fix_revert_tmp
+      git push
+
+      git branch -D fix_revert_tmp
 
 9.撤销之前的更改：
     $ git checkout -- readme.txt （还没有add）
@@ -73,6 +89,7 @@
       git checkout -b feature/test -t upstream/feature/test 根据上游分支创建本地分支
     $ git branch  （查看当前的分支）
     $ git checkout master （切换回master分支）
+    $ git checkout 123456 -b feat_test (按指定commitId切分支)
 
 14.合并分支：
     $ git merge dev （直接将dev的内容合并到master上来）
@@ -81,6 +98,7 @@
     $ git branch -D feature-vulcan （强行删除）
     $ git log --graph --pretty=oneline --abbrev-commit （查看分支合并图）
     $ git merge --no-ff -m "merge with no-ff" dev （不用fast forward模式合并 这样可以留下记录 ）
+    $ git merge --squash feat_test (然后再git commit -m) 将所有改动在一个分支里提交
 
 15.暂藏匿当前工作内容：
     $ git stash

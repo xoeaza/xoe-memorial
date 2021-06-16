@@ -1,0 +1,18 @@
+// Linux 常用命令
+ls -l 列出长数据串，包含文件属性
+
+ls -a 列出所有文件，包括隐藏文件
+
+ls | grep react 列出react开头的文件夹
+
+rm -f 强制删除，忽略不存在的文件
+
+rm -fr dir 强制删除目录dir中的所有文件
+
+cat text 查看文件内容
+
+chown users -R /dir  把dir目录下所有文件所有者改为users
+
+lsof -i:9080 查看占用9080端口的应用
+
+Kill 2587（指pid） 杀掉对应的进程
