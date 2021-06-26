@@ -16,3 +16,5 @@ chown users -R /dir  把dir目录下所有文件所有者改为users
 lsof -i:9080 查看占用9080端口的应用
 
 Kill 2587（指pid） 杀掉对应的进程
+
+crtl + r 可以搜索历史出现的linux命令
