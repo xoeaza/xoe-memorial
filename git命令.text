@@ -171,3 +171,11 @@ git branch -r| grep -E 'feature_oe|feat_oe2' | sed 's/origin\///g' | xargs -I {}
 
 29. 批量删除本地指定分支
 git branch |grep 'branchName' |xargs git branch -D
+
+30. 删除提交的敏感信息文件（path-to-your-remove-file 就是你要删除的文件的相对路径(相对于git仓库的根目录)）
+1. git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path-to-your-remove-file' --prune-empty --tag-name-filter cat -- --all
+2. git push origin master --force --tags 推送到远端
+3. rm -rf .git/refs/original/
+   git reflog expire --expire=now --all
+   git gc --prune=now
+   git gc --aggressive --prune=now  (清理和回收空间)
