@@ -18,3 +18,18 @@ lsof -i:9080 查看占用9080端口的应用
 Kill 2587（指pid） 杀掉对应的进程
 
 crtl + r 可以搜索历史出现的linux命令
+
+// 创建一个可执行脚本
+1.touch hello.sh
+
+2.vim hello.sh 
+ 键入i 
+ 插入#!/bin/sh
+     echo hello world;
+ 键入: 
+    esc 
+    :
+    wq
+3.chmod 700 hello.sh
+
+4. 执行./hello.sh
