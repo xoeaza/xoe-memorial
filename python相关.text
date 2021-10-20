@@ -1,0 +1,26 @@
+//mac:查看python安装的路径
+1.打开终端输入：python3
+2.导入sys包：import sys
+3.查找路径 ：sys.path
+
+// 查看python3执行路径
+which pip3
+
+// 设置python3 为默认版本
+$ echo "alias python=/usr/local/bin/python3.8" >> ~/.zshrc
+$ source ~/.zshrc
+
+或者
+$ echo "alias python=/usr/local/bin/python3.8" >> ~/.bashrc
+$ source ~/.bashrc
+
+// 更新python3 版本
+$ brew update && brew upgrade python
+
+// 继续使用python2
+/usr/bin/python
+
+// 查看已安装的包地址
+pip list
+// 安装外部库
+pip install xxx

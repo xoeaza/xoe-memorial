@@ -24,6 +24,7 @@
 
 6.查看仓库当前状态：
     $ git commit —-amend 回到提交前的状态
+    $ git commit --amend 合并之前的提交信息
     $ git status 
     $ git diff readme.txt （查看前后两次的区别 这里是readme.txt文件）
     $ cat readme.txt （显示readme.txt文档内容）
