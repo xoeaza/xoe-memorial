@@ -33,3 +33,6 @@ crtl + r 可以搜索历史出现的linux命令
 3.chmod 700 hello.sh
 
 4. 执行./hello.sh
+
+5. 查找linux服务器上conf文件地址
+find / | grep nginx.conf

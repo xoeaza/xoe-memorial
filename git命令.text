@@ -143,6 +143,8 @@ git branch -r -d origin/branch-name
 将改变推送到远程
 git push origin :branch-name
 
+$ git push origin --delete my-branch
+
 21: 解决.git/index.lock file exist问题
 rm -f ./.git/index.lock
 
@@ -183,3 +185,9 @@ git branch |grep 'branchName' |xargs git branch -D
    git reflog expire --expire=now --all
    git gc --prune=now
    git gc --aggressive --prune=now  (清理和回收空间)
+
+32. 我想从一个提交(commit)里移除一个文件
+  通过下面的方法，从一个提交(commit)里移除一个文件:
+  $ git checkout HEAD^ myfile
+  $ git add -A
+  $ git commit --amend
