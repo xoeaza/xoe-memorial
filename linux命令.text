@@ -42,3 +42,12 @@ find / | grep nginx.conf
 
 7. 查看域名dns
 nslookup www.baidu.com
+
+8. 查看nginx配置文件正确性
+./nginx -t 
+
+9. 查看nginx进程
+ps -aux | grep nginx
+
+10. 查看端口号为6001的server
+netstat -ang|grep 6001
