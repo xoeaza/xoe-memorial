@@ -51,3 +51,6 @@ ps -aux | grep nginx
 
 10. 查看端口号为6001的server
 netstat -ang|grep 6001
+
+11. 测试服务是否通畅 （telnet host 端口）
+telnet 192.168.31.100 8081
