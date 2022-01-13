@@ -54,3 +54,6 @@ netstat -ang|grep 6001
 
 11. 测试服务是否通畅 （telnet host 端口）
 telnet 192.168.31.100 8081
+
+12. 删除当前文件夹下所有的.png文件
+find . -name "*.png" | xargs rm -rf
