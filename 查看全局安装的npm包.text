@@ -13,6 +13,7 @@ yarn global list
 npm config set registry https://registry.npm.taobao.org
 npm config set registry http://npm.intra.xiaojukeji.com/
 npm config set registry http://registry.npm.xiaojukeji.com/
+npm config set registry http://nexus.cicconline.com/repository/npm-group/ 
 
 # 使用官方镜像
 npm config set registry https://registry.npmjs.org/
@@ -46,6 +47,19 @@ npm config set proxy 127.0.0.1:8080
 npm config delete proxy
 npm config delete https-proxy
 
+# npm缓存清理
+npm cache clean -f
+
 # nrm管理源
 nrm ls 查看源
 nrm use 使用源
+
+# 常用的换源
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
+npm config set sharp_dist_base_url https://npm.taobao.org/mirrors/sharp-libvips/
+npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
+npm config set puppeteer_download_host https://npm.taobao.org/mirrors/
+npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/
+npm config set sentrycli_cdnurl https://npm.taobao.org/mirrors/sentry-cli/
+npm config set sqlite3_binary_site https://npm.taobao.org/mirrors/sqlite3/
+npm config set python_mirror https://npm.taobao.org/mirrors/python/

@@ -57,3 +57,6 @@ telnet 192.168.31.100 8081
 
 12. 删除当前文件夹下所有的.png文件
 find . -name "*.png" | xargs rm -rf
+
+13. 查看access.log文件最后10行
+tail -n 10 access.log
