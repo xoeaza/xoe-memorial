@@ -1,0 +1,25 @@
+{
+  "name": "name",
+  "version": "0.1.0",
+  "author": "author",
+  "private": false,
+  "scripts": {
+    "prepare": "simple-git-hooks",
+    "serve": "vue-cli-service serve --mode development",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:test": "vue-cli-service build --mode test",
+    "reinstall": "rimraf node_modules && npm i",
+    "lint": "eslint ./src --ext .js,.vue",
+    "lint-stage": "npx lint-staged"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint ./src --ext .js,.vue",
+      "prettier --write"
+    ],
+    "*.{css,scss}": "prettier --write"
+  }
+}
