@@ -60,3 +60,17 @@ find . -name "*.png" | xargs rm -rf
 
 13. 查看access.log文件最后10行
 tail -n 10 access.log
+
+14. mac下启动nginx，及结束nginx，重启nginx命令
+ps -ef|grep nginx           查看是否有启动
+sudo /usr/local/Cellar/nginx/1.19.2/bin/nginx -t -c /usr/local/etc/nginx/nginx.conf  验证配置文件是否正确
+brew services start nginx   启动nginx
+brew services restart nginx 重启命令
+brew services stop nginx    关闭命令
+============================第二种重启命令
+cd /usr/local/Cellar/nginx/1.19.2/bin/
+./nginx -s reload
+============================获取nginx进程号
+ps -ef|grep nginx 获取到nginx的进程号, 注意是找到“nginx:master”的那个进程号
+kill -int 72      立刻停止nginx
+kill -hup 72      根据进程号重启
