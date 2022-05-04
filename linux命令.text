@@ -74,3 +74,7 @@ cd /usr/local/Cellar/nginx/1.19.2/bin/
 ps -ef|grep nginx 获取到nginx的进程号, 注意是找到“nginx:master”的那个进程号
 kill -int 72      立刻停止nginx
 kill -hup 72      根据进程号重启
+
+launchctl启动设置
+sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
+sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
