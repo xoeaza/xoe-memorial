@@ -3,3 +3,5 @@
 2. 查看本机ip： ifconfig en0
 
 3. 允许所有来源安装： sudo spctl --master-disable
+
+4.关闭电源事件同步命令：sudo pmset schedule cancelall
