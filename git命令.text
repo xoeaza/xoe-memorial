@@ -70,7 +70,9 @@
     $ git checkout -- test.txt （撤销 将版本库中的覆盖回来）
 
 11. 远端仓库：  	
+    git remote -v 查看远端仓库
     git remote set-url origin [url]   修改远程仓库
+    git remote set-url --add origin [url] 添加远程仓库
     git push -u origin [url] 
     git remote add upstream [url] 为远程库添加上游仓库git 
     git branch -v 查看各种远端分支
