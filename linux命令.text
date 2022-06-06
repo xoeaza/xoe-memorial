@@ -75,6 +75,9 @@ ps -ef|grep nginx 获取到nginx的进程号, 注意是找到“nginx:master”�
 kill -int 72      立刻停止nginx
 kill -hup 72      根据进程号重启
 
-launchctl启动设置
+15.launchctl启动设置
 sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
 sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+
+16.查看服务器是物理机还是虚拟机：
+dmidecode -s system-product-name
