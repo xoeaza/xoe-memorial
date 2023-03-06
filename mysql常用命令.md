@@ -273,8 +273,14 @@ SELECT * FROM author RIGHT JOIN book ON author.authorId = book.authorId;
 
 当一个查询结果是另一个查询的条件时，这个查询称之为子查询。
 
-
-
-
-
-
+测试数据库连接: SELECT 1;
+列出所有数据库：SHOW DATABASES;
+创建一个新数据库：CREATE DATABASE test
+删除一个数据库：DROP DATABASE test
+切换为当前数据库：USE test
+列出当前数据库的所有表：SHOW TABLES
+查看一个表的结构：DESC students
+查看创建表的SQL语句：SHOW CREATE TABLE students
+给students表新增一列birth：ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;
+要修改birth列，例如把列名改为birthda：ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;
+删除列：ALTER TABLE students DROP COLUMN birthday;
