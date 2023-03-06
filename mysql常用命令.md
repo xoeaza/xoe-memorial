@@ -284,3 +284,10 @@ SELECT * FROM author RIGHT JOIN book ON author.authorId = book.authorId;
 给students表新增一列birth：ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;
 要修改birth列，例如把列名改为birthda：ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;
 删除列：ALTER TABLE students DROP COLUMN birthday;
+
+插入或替换：REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
+插入或更新：INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99) ON DUPLICATE KEY UPDATE name='小明', gender='F', score=99;
+插入或忽略：INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
+复制一份当前表的数据到一个新表：CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;
+写入查询结果集：INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;
+强制使用指定索引：SELECT * FROM students FORCE INDEX (idx_class_id) WHERE class_id = 1 ORDER BY id DESC;
