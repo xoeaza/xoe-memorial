@@ -24,3 +24,5 @@ $ brew update && brew upgrade python
 pip list
 // 安装外部库
 pip install xxx
+//使用python内置的pip安装库：
+国内镜像地址：https://pypi.tuna.tsinghua.edu.cn/simple
