@@ -1,2 +1,12 @@
 explorer . //打開文件夾
 start . //打開文件夾
+
+// 获取以太网名称
+Get-NetAdapter
+
+// 禁用以太网
+Disable-NetAdapter -Name "以太网"
+netsh interface set interface "以太网" admin=disable
+// 开启以太网
+Enable-NetAdapter -Name "以太网"
+netsh interface set interface "以太网" admin=enable
