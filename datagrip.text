@@ -1,0 +1,17 @@
+1.快速导航到指定的表、视图、函数等
+Ctrl+N 输入需要导航的名称，回车即可
+
+2.全局搜索
+连续两次按下 shift 键
+
+3.导航到关联数据
+表之间会有外检关联，查询的时候，能直接定位到关联数据，或者被关联数据，例如 user1 表有个外检字段 classroom 指向 classroom 表的主键 id，在查询 classroom 表数据的时候，可以在 id 字段上右键，go to，referencing data
+
+4.大写自动转换
+ Ctrl+shift+U 快捷键自动转换
+
+5.sql 格式化
+Ctrl+Alt+L 
+
+6.查看表或字段缩略图
+表名或者字段上Alt+点击
