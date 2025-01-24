@@ -10,3 +10,9 @@ netsh interface set interface "以太网" admin=disable
 // 开启以太网
 Enable-NetAdapter -Name "以太网"
 netsh interface set interface "以太网" admin=enable
+
+// 所有用户设置默认以管理员权限运行
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "EnableLUA" -Value 0
+
+//恢复默认设置
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -Name "EnableLUA" -Value 1
