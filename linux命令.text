@@ -81,3 +81,6 @@ sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 
 16.查看服务器是物理机还是虚拟机：
 dmidecode -s system-product-name
+
+17. 指定nginx版本和配置文件 启动nginx
+/usr/sbin/nginx -c /etc/nginx/conf/nginx.conf

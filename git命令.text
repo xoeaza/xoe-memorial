@@ -201,3 +201,12 @@ npm i -g mmt
 mmt import https://gitee.com/hua1995116/mmt-practices/raw/master/mmt-export-gitee.json
 // 进入到你想要添加命令的目录
 mmt run gitee // 每个原有 github 仓库无脑运行这个命令就可以
+
+34.验证 SSH 或 HTTPS 协议
+
+HTTPS 问题：尝试改用 SSH 协议
+git remote set-url origin git@github.com:xoeaza/xoe-memorial.git
+git pull --tags origin master
+SSH 问题：检查密钥配置：
+
+ssh -T git@github.com  # 测试 SSH 连通性
