@@ -291,3 +291,72 @@ SELECT * FROM author RIGHT JOIN book ON author.authorId = book.authorId;
 复制一份当前表的数据到一个新表：CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;
 写入查询结果集：INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;
 强制使用指定索引：SELECT * FROM students FORCE INDEX (idx_class_id) WHERE class_id = 1 ORDER BY id DESC;
+
+<!-- 查找所有有注释的表 -->
+SELECT
+    t.TABLE_NAME,
+    tc.COMMENTS as TABLE_COMMENT,
+    t.NUM_ROWS,
+    t.LAST_ANALYZED
+FROM ALL_TABLES t
+LEFT JOIN ALL_TAB_COMMENTS tc ON t.OWNER = tc.OWNER AND t.TABLE_NAME = tc.TABLE_NAME
+WHERE t.OWNER = 'FORP_CICC'
+  AND tc.COMMENTS IS NOT NULL  -- 只查有注释的表
+ORDER BY t.TABLE_NAME;
+
+SELECT
+    t.TABLE_NAME AS 表名,
+    t.TABLE_COMMENT AS 表注释, -- 关键！有注释直接缩小范围
+    c.COLUMN_NAME AS 字段名,
+    c.COLUMN_TYPE AS 字段类型,
+    c.COLUMN_COMMENT AS 字段注释,
+    c.IS_NULLABLE AS 是否可为空,
+    c.COLUMN_KEY AS 索引类型,
+  c.EXTRA AS 额外信息（如自增）
+FROM
+    information_schema.TABLES t
+    LEFT JOIN
+    information_schema.COLUMNS c
+ON t.TABLE_SCHEMA = c.TABLE_SCHEMA AND t.TABLE_NAME = c.TABLE_NAME
+WHERE
+    t.TABLE_SCHEMA = 'ibapp_db'
+  AND t.TABLE_TYPE = 'BASE TABLE' -- 排除视图，先看物理表
+ORDER BY
+    t.TABLE_NAME, c.ORDINAL_POSITION;
+
+<!-- 查找注释中带'项目'两字的表 -->
+SELECT
+    t.TABLE_NAME,
+    tc.COMMENTS as TABLE_COMMENT,
+    t.NUM_ROWS,
+    t.LAST_ANALYZED
+FROM ALL_TABLESt
+LEFT JOIN ALL_TAB_COMMENTS tc ON t.OWNER = tc.OWNER AND t.TABLE_NAME = tc.TABLE_NAME
+WHERE t.OWNER = 'FORP_CICC'
+  AND tc.COMMENTS IS NOT NULL
+  AND tc.COMMENTS LIKE '%项目%'
+ORDER BY t.TABLE_NAME;
+
+<!-- 查找固定表名的定义 -->
+SELECT
+    t.TABLE_NAME AS 表名,
+    t.TABLE_COMMENT AS 表注释,
+    c.COLUMN_NAME AS 字段名,
+    c.COLUMN_TYPE AS 字段类型,
+    c.CHARACTER_MAXIMUM_LENGTH AS 最大长度, -- 对字符类型更精确
+    c.COLUMN_COMMENT AS 字段注释,
+    IF(c.IS_NULLABLE = 'YES', '是', '否') AS 是否可为空,
+    c.COLUMN_KEY AS 索引类型, -- 值如 PRI(主键), UNI(唯一键), MUL(普通索引)
+    IF(LOCATE('auto_increment', c.EXTRA) > 0, '是', '否') AS 是否自增,
+    c.COLUMN_DEFAULT AS 默认值
+FROM
+    information_schema.TABLES t
+    LEFT JOIN information_schema.COLUMNS c
+        ON t.TABLE_SCHEMA = c.TABLE_SCHEMA
+        AND t.TABLE_NAME = c.TABLE_NAME
+WHERE
+    t.TABLE_SCHEMA = 'iblabel'
+    AND t.TABLE_TYPE = 'BASE TABLE'  -- 确保只查询基础表，排除视图
+    AND t.TABLE_NAME = 'rule'  -- 若需查询特定表，可取消注释此条件
+ORDER BY
+    t.TABLE_NAME, c.ORDINAL_POSITION; -- 按表名和字段定义顺序排序

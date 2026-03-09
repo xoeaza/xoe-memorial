@@ -49,6 +49,9 @@ nslookup www.baidu.com
 9. 查看nginx进程
 ps -aux | grep nginx
 
+使用指定配置文件启动nginx
+nginx -c /path/to/new/nginx.conf
+
 10. 查看端口号为6001的server
 netstat -ang|grep 6001
 
@@ -84,3 +87,45 @@ dmidecode -s system-product-name
 
 17. 指定nginx版本和配置文件 启动nginx
 /usr/sbin/nginx -c /etc/nginx/conf/nginx.conf
+
+18.新部nginx服务命令，新建www
+# 创建/www目录
+mkdir -p /www
+
+# 设置所有者和权限
+chown nginx:nginx /www
+chmod 755 /www
+
+# 创建一个简单的测试页面
+cat > /www/index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you can see this page, the nginx web server is successfully installed and working.</p>
+</body>
+</html>
+EOF
+
+# 设置文件权限
+chown nginx:nginx /www/index.html
+chmod 644 /www/index.html
+
+# 检查目录结构
+ls -la /www/
+
+# 重启nginx
+systemctl restart nginx
+
+# 检查状态
+systemctl status nginx
+
+# 查找所有nginx进程
+ps aux | grep nginx
+
+# 强制杀掉所有nginx进程
+sudo pkill -f nginx
+sudo killall nginx

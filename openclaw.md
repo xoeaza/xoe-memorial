@@ -7,6 +7,7 @@ openclaw reset <setting>：重置指定的设置。
 
 <!-- 查看运行状态 -->
 openclaw status
+systemctl --user status openclaw-gateway.service 
 
 <!-- 前台启动 -->
 openclaw gateway
@@ -27,3 +28,12 @@ openclaw update
 <!-- 查看和设置模型 -->
 openclaw models list
 openclaw models set siliconflow/Pro/zai-org/GLM-4.7
+
+<!-- 手动安装skill -->
+npm config set registry https://registry.npmmirror.com
+cd ~/.openclaw/workspace/skills
+git clone https://ghproxy.com/https://github.com/6551Team/opentwitter-mcp.git
+openclaw gateway restart
+
+git clone https://ghproxy.com/https://github.com/vercel-labs/agent-browser
+git clone https://github.com/vercel-labs/agent-browser

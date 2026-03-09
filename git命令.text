@@ -210,3 +210,7 @@ git pull --tags origin master
 SSH 问题：检查密钥配置：
 
 ssh -T git@github.com  # 测试 SSH 连通性
+
+35.查看最近更新的git分支
+git config --global alias.recent "for-each-ref --sort=-committerdate --count=10 --format='%(committerdate:short) %(refname:short) %(authorname)' refs/heads refs/remotes"
+git recent
